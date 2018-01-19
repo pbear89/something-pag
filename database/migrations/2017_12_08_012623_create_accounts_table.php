@@ -18,8 +18,8 @@ class CreateAccountsTable extends Migration
             $table->string('str_nombre', 100)->default('null');
             $table->string('str_num_cuenta', 250)->default('null');
             $table->string('str_id', 50)->default('null');
-            $table->int('int_tipo')->default('0');
-            $table->int('int_banco')->default('0');
+            $table->integer('int_tipo')->default('0');
+            $table->integer('int_banco')->default('0');
 
             $table->timestamps();
         });

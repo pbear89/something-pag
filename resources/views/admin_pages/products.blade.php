@@ -13,44 +13,36 @@
 <section class="forms">
     <div class="container-fluid">   
         <header>
-            <h1 class="h3 display"> {{ trans('core.start') }} - ¿Que deseas Hacer?</h1>
+            <h1 class="h3 display"> {{ trans('core.products') }} - ¿Que deseas Hacer?</h1>
         </header>
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-flex align-items-center">
-                    <h2 class="h5 display display">Productos</h2>
+                    <h2 class="h5 display display">{{ trans('core.products') }}</h2>
                 </div>
                 <div class="card-body">
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                    <ul class="list-group">
-                    <li class="list-group-item"><a href="productos_lista.php"><i class="fa fa-fw fa-bars"></i> Listado de Productos</a></li>
-                    <li class="list-group-item"><a href="color_lista.php"><i class="fa fa-tint"></i> Listado de Colores de Productos</a></li>
-                    <li class="list-group-item"><a href="talla_lista.php"><i class="fa fa-expand fa-fw"></i> Listado de Tallas de Productos</a></li>
-                    <li class="list-group-item"><a href="categoria_lista.php?recordId=0"><i class="fa fa-sitemap"></i>  Listado de Categorias</a></li>
-                    <li class="list-group-item"><a href="marca_lista.php"><i class="fa fa-certificate"></i> Listado de Marcas</a></li>
+
+                    <p>{{ trans('core.listaproductos') }}</p>
+                    
+                        <ul class="list-group">
+
+                        @forelse ($products as $product)
+
+                            <li class="list-group-item">{{$product}}</li>
+                        @empty
+                            <li class="list-group-item">
+                                <h2>{{trans('core.norecord')}}</h2>
+                            </li>  
+
+                        @endforelse                
                     </ul>
+
                 </div>
             </div>
         </div>
         
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-header d-flex align-items-center">
-                    <h2 class="h5 display display">Compras</h2>
-                </div>
-                <div class="card-body">
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                    <ul class="list-group">
-                    <li class="list-group-item"><a href="compras_lista.php"><i class="fa fa-list-alt" aria-hidden="true"></i> Listado de Compras</a></li>
-                    <li class="list-group-item"><a href="reportes_lista.php"><i class="fa fa-list-ol" aria-hidden="true"></i> Listado de Reportes de Pago</a></li>
-                    <li class="list-group-item"><a href="envios_lista.php"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Reportar Envios</a></li>
-                  </ul>
-                </div>
-            </div>
-        </div>
-
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header d-flex align-items-center">

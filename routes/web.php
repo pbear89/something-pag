@@ -27,6 +27,9 @@ Route::get('/details', function () {
     return view('pages.details');
 });
 
+Route::get('/details/{id}', 'ProductsController@show')->where('id','[0-9]+');
+
+
 Route::get('/about', function () {
     return view('pages.about');
 });
@@ -45,6 +48,12 @@ Route::get('lang/{lang}', function ($lang) {
 Route::get('/admin', function () {
     return view('admin_pages.index');
 });
+
+Route::get('/admin/products', 'ProductsController@index');
+
+Route::get('/admin/products/{id}', 'ProductsController@edit')->where('id','[0-9]+');
+
+Route::get('/admin/products/create', 'ProductsController@create');
 
 Route::get('/tres', function () {
     return view('pages.one');

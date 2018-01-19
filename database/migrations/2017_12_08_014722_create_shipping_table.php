@@ -15,6 +15,10 @@ class CreateShippingTable extends Migration
     {
         Schema::create('shipping', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_compra')->default('0');
+            $table->string('str_empresa')->default('null');
+            $table->string('str_guia')->default('null');
+            $table->string('str_comentarios')->default('null');
             $table->timestamps();
         });
     }

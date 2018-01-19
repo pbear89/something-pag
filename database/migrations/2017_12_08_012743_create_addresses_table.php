@@ -19,7 +19,7 @@ class CreateAddressesTable extends Migration
             $table->string('str_nombre', 250)->default('null');
             $table->string('str_apellido', 250)->default('null');
             $table->string('str_id', 100)->default('null');
-            $table->text('str_direccion')->default('null');
+            $table->text('str_direccion')->nullable();
             $table->string('str_telf_fijo', 100)->default('null');
             $table->string('str_telf_movil', 100)->default('null');
             $table->string('str_ciudad', 100)->default('null');

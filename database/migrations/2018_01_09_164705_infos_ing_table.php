@@ -13,17 +13,21 @@ class InfosIngTable extends Migration
      */
     public function up()
     {
-        $table->increments('id');
-        $table->string('str_nombre_pag', 250)->default('null');
-        $table->text('str_direccion')->default('null');
-        $table->string('str_titulo', 250)->default('null');
-        $table->text('str_nosotros')->default('null');
-        $table->string('str_footer', 250)->default('null');
-        $table->text('str_terminos')->default('null');
-        $table->text('str_comprar')->default('null');
-        $table->text('str_faq')->default('null');
+        Schema::create('infos_ing', function (Blueprint $table) {
 
-        $table->timestamps();
+            $table->increments('id');
+            $table->string('str_nombre_pag', 250)->default('null');
+            $table->text('str_direccion')->nullable();
+            $table->string('str_titulo', 250)->default('null');
+            $table->text('str_nosotros')->nullable();
+            $table->string('str_footer', 250)->default('null');
+            $table->text('str_terminos')->nullable();
+            $table->text('str_comprar')->nullable();
+            $table->text('str_faq')->nullable();
+
+            $table->timestamps();
+        
+        });
     }
 
     /**
@@ -33,6 +37,6 @@ class InfosIngTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('infos_ing');
     }
 }

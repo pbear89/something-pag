@@ -15,6 +15,10 @@ class CreateProductimagesTable extends Migration
     {
         Schema::create('productimages', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_producto')->default('0');
+            $table->integer('id_color')->default('0');
+            $table->integer('id_talla')->default('0');
+            $table->string('str_imagen', 250)->default('null');
             $table->timestamps();
         });
     }

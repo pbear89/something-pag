@@ -7,7 +7,26 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
     public function index(){
-        echo 'index';
+        
+        if (request()->has('empty'))
+        {
+            $products = [];
+        } else {
+            // $products = Product::all();
+            $products = [
+                'Producto 1',
+                'Producto 2',
+                'Producto 3',
+                'Producto 4',
+                'Producto 5',
+            ];
+        }
+        
+
+        return view('admin_pages.products', 
+            [ 'products'=> $products ]
+        );
+
      }
      public function create(){
         echo 'create';
@@ -19,7 +38,7 @@ class ProductsController extends Controller
         echo 'show';
      }
      public function edit($id){
-        echo 'edit';
+        return view('admin_pages.products');
      }
      public function update(Request $request, $id){
         echo 'update';

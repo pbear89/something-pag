@@ -22,13 +22,13 @@ class CreateInfosTable extends Migration
             $table->string('str_twitter', 250)->default('null');
             $table->string('str_instagram', 250)->default('null');
             $table->string('str_email', 250)->default('null');
-            $table->text('str_direccion')->default('null');
+            $table->text('str_direccion')->nullable();
             $table->string('str_titulo', 250)->default('null');
-            $table->text('str_nosotros')->default('null');
+            $table->text('str_nosotros')->nullable();
             $table->string('str_footer', 250)->default('null');
-            $table->text('str_terminos')->default('null');
-            $table->text('str_comprar')->default('null');
-            $table->text('str_faq')->default('null');
+            $table->text('str_terminos')->nullable();
+            $table->text('str_comprar')->nullable();
+            $table->text('str_faq')->nullable();
 
             $table->timestamps();
         });

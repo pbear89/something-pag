@@ -15,6 +15,8 @@ class CreateBrandsTable extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('str_marca', 250)->default('null');
+            $table->string('str_imagen', 250)->default('null');
             $table->timestamps();
         });
     }

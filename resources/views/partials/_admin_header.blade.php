@@ -9,7 +9,7 @@
 
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                               
-                <li class="nav-item"><a href="home" class="nav-link logout">Regresar a la Web<i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="../home" class="nav-link logout">Regresar a la Web<i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>

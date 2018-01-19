@@ -17,11 +17,11 @@ class CreateBlogsTable extends Migration
             $table->increments('id');
             $table->string('str_titulo', 150)->default('null');
             $table->string('str_titulo_ing', 150)->default('null');
-            $table->text('str_contenenido')->default('null');
-            $table->text('str_contenenido_ing')->default('null');
+            $table->text('str_contenenido')->nullable();
+            $table->text('str_contenenido_ing')->nullable();
             $table->string('str_imagen', 250)->default('null');
             $table->string('str_descripcion', 400)->default('null');
-            $table->string('str_descripcion', 400)->default('null');
+            $table->string('str_descripcion_ing', 400)->default('null');
 
             $table->timestamps();
         });

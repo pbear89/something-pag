@@ -465,6 +465,7 @@ return array(
  "acceptedpayments"       	            => "Accepted Payments",  
  "productcode"       	                => "Product Code",  
  "product"       	                    => "Product",  
+ "products"       	                    => "Products",  
  "qty"       	                    	=> "QTY",  
  "total"       	                    	=> "Grand Total",  
  "itemname"       	                    => "Item Name",  
@@ -626,4 +627,5 @@ return array(
  "grouproominglist"			                => "Group Rooming List",  
  "totalpassenger"			                => "Total Passengers",  
  "similarcars"			                    => "Similar Cars",  
+ "listaproductos"			                    => "Products List",  
 );

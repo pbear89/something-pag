@@ -15,8 +15,8 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_usuario')->default('null');
-            $table->integer('int_tipo_pago')->default('null');
+            $table->integer('id_usuario')->default('0');
+            $table->integer('int_tipo_pago')->default('0');
             $table->double('int_total', 50, 2)->default('0');
             $table->integer('int_estatus')->default('0');
             $table->integer('int_envio')->default('0');          

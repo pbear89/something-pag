@@ -17,9 +17,10 @@ class CreateCartsTable extends Migration
             $table->increments('id');
             $table->integer('id_usuario');
             $table->integer('id_producto')->default('0');
-            $table->integer('int_cantidad')->default('null');
+            $table->integer('int_cantidad')->default('0');
             $table->integer('int_Transaccion')->default('0');
-            $table->integer('id_categoria')->default('null');
+            $table->integer('id_compra')->default('0');
+            $table->integer('id_categoria')->default('0');
             $table->integer('id_talla')->default('0');
             $table->integer('id_color')->default('0');
             $table->integer('id_modelo')->default('0');
