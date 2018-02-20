@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
@@ -12,14 +13,9 @@ class ProductsController extends Controller
         {
             $products = [];
         } else {
-            // $products = Product::all();
-            $products = [
-                'Producto 1',
-                'Producto 2',
-                'Producto 3',
-                'Producto 4',
-                'Producto 5',
-            ];
+            $pdo = DB::connection()->getPdo();
+            $products = DB::select('select * from products where int_activo = 1' );
+          
         }
         
 
@@ -35,10 +31,33 @@ class ProductsController extends Controller
         echo 'store';
      }
      public function show($id){
-        echo 'show';
+        
+        if (request()->has('empty'))
+        {
+            $products = [];
+        } else {
+            $pdo = DB::connection()->getPdo();
+            $results = DB::select('select * from products where id = :id', 
+                    ['id' => $id]
+                );
+
+            $images = DB::select('select * from productimages where id_producto = :id', 
+                    ['id' => $id]
+                );
+
+            $stocks = DB::select('select * from productimages where id_producto = :id', 
+                    ['id' => $id]
+                );
+          
+        }
+        return view('admin_pages.products.show', 
+            [ 'results'=> $results,  'images'=> $images,  'stocks'=> $stocks ]
+        );
+
      }
+
      public function edit($id){
-        return view('admin_pages.products');
+        return view('admin_pages.products.edit');
      }
      public function update(Request $request, $id){
         echo 'update';

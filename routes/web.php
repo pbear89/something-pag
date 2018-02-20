@@ -49,11 +49,11 @@ Route::get('/admin', function () {
     return view('admin_pages.index');
 });
 
-Route::get('/admin/products', 'ProductsController@index');
+Route::resource('/admin/products', 'ProductsController');
 
-Route::get('/admin/products/{id}', 'ProductsController@edit')->where('id','[0-9]+');
+// Route::get('/admin/products/{id}', 'ProductsController@edit')->where('id','[0-9]+');
 
-Route::get('/admin/products/create', 'ProductsController@create');
+// Route::get('/admin/products/create', 'ProductsController@create');
 
 Route::get('/tres', function () {
     return view('pages.one');

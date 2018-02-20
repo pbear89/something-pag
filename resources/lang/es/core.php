@@ -1,6 +1,6 @@
 <?php 
 return array( 
-"norecord" => "No Se Ha Encontrado Ningún Registro ",
+"norecord" => "No se ha encontrado ningún registro ",
 "create" => "Crear Nuevo ",
 "home" => "Casa ",
 "group" => "Grupo ",

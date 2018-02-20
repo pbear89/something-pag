@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Admin Productos | Admin Products')
+@section('title','Admin Inicio | Admin Index')
 @section('pagtitle','Admin Home | Admin Home')
 
 @section('content')
@@ -26,7 +26,7 @@
 
                 <ul class="list-group">
                        
-                        <a href="{{ route('products.create') }}" class="btn btn-success"> 
+                        <a href="{{ route('products.create') }}" class="btn btn-info"> 
                             {{ trans('core.create') }} 
                         </a>
                                                  
@@ -56,17 +56,7 @@
                             <td>{{ $product->str_nombre }}</td>
                             <td>{{ $product->id_categories }}</td>
                             <td>{{ $product->dblprecio }}</td>
-                            <td>                                
-                                <a href="{{ route('products.show', $product->id) }}" class="btn btn-small btn-info"> 
-                                    {{ trans('core.btn_view') }} 
-                                </a>                                
-                                <a href="{{ route('products.edit', $product->id) }}" class="btn btn-small btn-warning"> 
-                                    {{ trans('core.btn_edit') }} 
-                                </a>                                
-                                <a href="{{ route('products.destroy', $product->id) }}" class="btn btn-danger"> 
-                                    {{ trans('core.btn_remove') }} 
-                                </a>
-                            </td>
+                            <td>@mdo</td>
                         </tr>                      
                   
 
